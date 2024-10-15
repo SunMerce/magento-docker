@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Start cron"
+cron
+echo "cron started"
+
+# Setup config
+/usr/local/bin/magento-install
+
+# Start the php-fpm service
+/usr/local/sbin/php-fpm

@@ -1,0 +1,56 @@
+services:
+  app:
+    build: .docker/nginx
+    container_name: ${APP_PREFIX}-app
+    ports:
+      - "${WEB_PORT}:80"
+    links:
+      - php
+    volumes:
+      - ./web:/var/www
+
+  php:
+    build:
+      context: .docker/php-fpm
+      args:
+        WEB_PORT: ${WEB_PORT}
+    container_name: ${APP_PREFIX}-php
+    links:
+      - db
+      - redis
+      - search
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./web:/var/www
+
+  db:
+    image: mysql:8.0
+    container_name: ${APP_PREFIX}-db
+    ports:
+      - "${DB_PORT}:3306"
+    command: ["--log_bin_trust_function_creators=1"]
+    env_file: .docker/docker-env
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  search:
+    image: opensearchproject/opensearch:2.12.0
+    container_name: ${APP_PREFIX}-search
+    environment:
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms4096m -Xmx4096m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
+      - "discovery.type=single-node"
+    volumes:
+      - searchdata:/usr/share/opensearch/data
+
+  redis:
+    image: redis:7.2
+    container_name: ${APP_PREFIX}-redis
+    tty: true
+
+volumes:
+  dbdata: {}
+  searchdata: {}
