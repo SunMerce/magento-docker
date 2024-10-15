@@ -34,3 +34,5 @@ It technically would run in other operating system as well, but this project doe
 If you prefer having a domain or SSL for local developemtn, use a reverse proxy. I find caddy works great for me.
 ### How do I setup multiple magento instances for my different clients/projects
 In each of your project, modify the .env file to give the project a unique prefix and a set of unique port numbers
+### How to send email / configure SMTP
+I recommend using a free developer tool like https://mailtrap.io, get SMTP credentails from your account, and configure in magento admin https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications
