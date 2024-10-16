@@ -8,29 +8,29 @@ Only comes with essential components to get magento running, perfect for new dev
 
 ## Installtion
 1. clone or download this repo to a project folder
-`
+```
 cd ~
 git clone https://github.com/SunMerce/magento-docker myapp
-`
+```
 2. in the project folder, clone or download magento into a web folder
-`
+```
 cd myapp
 git clone https://github.com/mage-os/mageos-magento2
-`
-3. rename nginx config file
-`
+```
+3. create nginx config file
+```
 cp -n web/nginx.cong.sample web/nginx.cong
-`
+```
 4. build docker containers
-`
+```
 docker compose build
-`
+```
 5. run docker containers
-`
+```
 docker compose run
-`
+```
 
-now you can access your magento in your browser, by default the url will be [http://http://127.0.0.1:81/](http://127.0.0.1:81/)
+now you can access your magento in your browser, by default the url will be [http://127.0.0.1:81/](http://127.0.0.1:81/)
 
 ## FAQ
 ### Is it Linux only?
@@ -40,4 +40,4 @@ If you prefer having a domain or SSL for local developemtn, use a reverse proxy.
 ### How do I setup multiple magento instances for my different clients/projects
 In each of your project, modify the .env file to give the project a unique prefix and a set of unique port numbers
 ### How to send email / configure SMTP
-I recommend using a free developer tool like https://mailtrap.io, get SMTP credentails from your account, and configure in magento admin https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications
+I recommend using a free developer tool like https://mailtrap.io, get SMTP credentails from your account, and configure in magento admin [SMTP section](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications)
