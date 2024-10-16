@@ -2,6 +2,10 @@
 ## Minimal docker setup
 Only comes with essential components to get magento running, perfect for new developer with a linux machine
 
+## Requirement
+* docker engine https://docs.docker.com/engine/install/ (not docker desktop)
+* docker compose https://docs.docker.com/compose/install/linux/
+
 ## Installtion
 1. clone or download this repo to a project folder
 `
