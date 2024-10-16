@@ -1,4 +1,4 @@
-# Magento Docker Compose
+# Magento2 Docker Compose
 ## Minimal docker setup
 Only comes with essential components to get magento running, perfect for new developer with a linux machine
 
