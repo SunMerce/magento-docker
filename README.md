@@ -46,3 +46,8 @@ After you have reverse proxy pointing to the ip+port, update base url to the loc
 In each of your project, modify the .env file to give the project a unique prefix and a set of unique port numbers
 ### How to send email / configure SMTP
 I recommend using a free developer tool like https://mailtrap.io, get SMTP credentails from your account, and configure in magento admin [SMTP section](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications)
+### This docker compose is way too simplified, I need a lot more component to meet my needs
+Checkout the one from Mark https://github.com/markshust/docker-magento
+
+## Final
+This project tries to build magento docker in the most generic way possible, it does not come with much helper tools. it is recommmended for developers to get familiar gradually with docker commands, managing containers along with using this project for your magento development.
