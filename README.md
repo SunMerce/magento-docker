@@ -35,8 +35,13 @@ now you can access your magento in your browser, by default the url will be [htt
 ## FAQ
 ### Is it Linux only?
 It technically would run in other operating system as well, but this project does not contain the optimizing options tailered for other system. You may experience suboptimal performance. I strongly recommend developers migrate to a linux based system for magento development.
+### How do I run magento cli?
+Simply attach the php container with running this command in terminal `docker exec -it ma-php bash` (replace ma with your own project prefix if changed), then you can run any `bin/magento` or `composer` command in the php container
+### How do I manage mysql DB
+Install mysql workbench, in the workbench, add a new connection to the magento db. the default port is 3316, default db/user/password are all `magento`
 ### How do I run a local domain and/or HTTPS
 If you prefer having a domain or SSL for local developemtn, use a reverse proxy. I find caddy works great for me.
+After you have reverse proxy pointing to the ip+port, update base url to the local domain in core_config_data table
 ### How do I setup multiple magento instances for my different clients/projects
 In each of your project, modify the .env file to give the project a unique prefix and a set of unique port numbers
 ### How to send email / configure SMTP
