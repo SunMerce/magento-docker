@@ -19,7 +19,7 @@ git clone https://github.com/mage-os/mageos-magento2 web
 ```
 3. create nginx config file
 ```
-cp -n web/nginx.cong.sample web/nginx.cong
+cp -n web/nginx.conf.sample web/nginx.conf
 ```
 4. build docker containers
 ```
