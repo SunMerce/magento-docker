@@ -15,7 +15,7 @@ git clone https://github.com/SunMerce/magento-docker myapp
 2. in the project folder, clone or download magento into a web folder
 ```
 cd myapp
-git clone https://github.com/mage-os/mageos-magento2
+git clone https://github.com/mage-os/mageos-magento2 web
 ```
 3. create nginx config file
 ```
