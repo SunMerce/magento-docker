@@ -27,7 +27,7 @@ docker compose build
 ```
 5. run docker containers
 ```
-docker compose run
+docker compose up
 ```
 
 now you can access your magento in your browser, by default the url will be [http://127.0.0.1:81/](http://127.0.0.1:81/)
