@@ -50,7 +50,8 @@ ENV PHP_PM_MAX_SPARE_SERVERS 6
 COPY conf/www.conf /usr/local/etc/php-fpm.d/
 COPY conf/php.ini /usr/local/etc/php/
 COPY conf/xdebug.ini /usr/local/etc/php/
-COPY bin/* /usr/local/bin/
+COPY bin/magento-install /usr/local/bin/
+COPY bin/start /usr/local/bin/
 
 RUN echo "*/5 * * * * /opt/APPLICATION/restart.sh > /proc/1/fd/1 2>&1" >> /etc/cron.d/restart-cron \
     # Give the necessary rights to the user to run the cron
