@@ -29,7 +29,8 @@ RUN docker-php-ext-install \
   xsl \
   opcache \
   zip \
-  sockets
+  sockets \
+  ftp
   
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
